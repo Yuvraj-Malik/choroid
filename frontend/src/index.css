@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { font-feature-settings: 'tnum' 1; }
+  :focus-visible { outline: 2px solid #0E6B5A; outline-offset: 2px; }
+}
+
+@layer components {
+  .panel { @apply rounded-md border border-line bg-surface; }
+  .field-label { @apply mb-1 block text-xs font-medium text-ink-2; }
+  .input { @apply h-8 w-full rounded border border-line bg-surface px-2.5 text-sm text-ink outline-none placeholder:text-subtle focus:border-icg focus:ring-2 focus:ring-icg/15; }
+  .btn { @apply inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap rounded px-3 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-icg text-white hover:bg-icg-hover; }
+  .btn-secondary { @apply btn border border-line bg-surface text-ink-2 hover:bg-canvas; }
+  .btn-quiet { @apply btn px-2 text-muted hover:text-ink; }
+  .seg { @apply inline-flex rounded border border-line bg-canvas p-0.5; }
+  .seg > button { @apply h-7 rounded-[3px] px-3 text-xs font-medium text-muted; }
+  .seg > button[aria-pressed='true'] { @apply bg-surface text-ink shadow-[0_0_0_1px_#D9DDE3]; }
+}
+
+input[type='range'] { accent-color: #0E6B5A; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
